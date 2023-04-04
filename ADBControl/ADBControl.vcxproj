@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5559D3CA-5A33-4CDE-AADD-6755A38B0F67}</ProjectGuid>
+    <RootNamespace>BestAdbControl_VS2008</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\WinDDK\7600.16385.1\inc\api;C:\WinDDK\7600.16385.1\inc\ddk;E:\workspace\zlib-1.2.11;C:\Program Files (x86)\OpenSSL-Win32\include;C:\WinDDK\7600.16385.1\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\workspace\zlib-1.2.11;C:\WinDDK\7600.16385.1\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\WinDDK\7600.16385.1\inc\api;C:\WinDDK\7600.16385.1\inc\ddk;E:\workspace\zlib-1.2.11;C:\Program Files (x86)\OpenSSL-Win32\include;C:\WinDDK\7600.16385.1\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\workspace\zlib-1.2.11;C:\WinDDK\7600.16385.1\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\include;..\AdbWinApi;..\libzipfile;..\adb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;DEBUG=1;ADB_HOST;HAVE_WIN32_IPC;HAVE_WIN32_PROC;HAVE_WINSOCK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Ws2_32.lib;libcrypto.lib;libssl.lib;zlib.lib;AdbWinApi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\$(Configuration);C:\Program Files (x86)\OpenSSL-Win32\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>MSVCRT.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalOptions> /SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\include;..\AdbWinApi;..\libzipfile;..\adb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;ADB_HOST;HAVE_WIN32_IPC;HAVE_WIN32_PROC;HAVE_WINSOCK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Ws2_32.lib;libcrypto.lib;libssl.lib;zlib.lib;AdbWinApi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\$(Configuration);C:\Program Files (x86)\OpenSSL-Win32\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>MSVCRT.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\adb\adb.cpp" />
+    <ClCompile Include="..\adb\adb_auth_client.cpp" />
+    <ClCompile Include="..\adb\adb_auth_host.cpp" />
+    <ClCompile Include="..\adb\adb_client.cpp" />
+    <ClCompile Include="..\adb\backup_service.cpp" />
+    <ClCompile Include="..\adb\commandline.cpp" />
+    <ClCompile Include="..\adb\console.cpp" />
+    <ClCompile Include="..\adb\fdevent.cpp" />
+    <ClCompile Include="..\adb\file_sync_client.cpp" />
+    <ClCompile Include="..\adb\file_sync_service.cpp" />
+    <ClCompile Include="..\adb\framebuffer_service.cpp" />
+    <ClCompile Include="..\adb\get_my_path_darwin.cpp" />
+    <ClCompile Include="..\adb\get_my_path_freebsd.cpp" />
+    <ClCompile Include="..\adb\get_my_path_linux.cpp" />
+    <ClCompile Include="..\adb\get_my_path_windows.cpp" />
+    <ClCompile Include="..\adb\jdwp_service.cpp" />
+    <ClCompile Include="..\adb\remount_service.cpp" />
+    <ClCompile Include="..\adb\services.cpp" />
+    <ClCompile Include="..\adb\sockets.cpp" />
+    <ClCompile Include="..\adb\sysdeps_win32.cpp" />
+    <ClCompile Include="..\adb\test_track_devices.cpp" />
+    <ClCompile Include="..\adb\test_track_jdwp.cpp" />
+    <ClCompile Include="..\adb\transport.cpp" />
+    <ClCompile Include="..\adb\transport_local.cpp" />
+    <ClCompile Include="..\adb\transport_usb.cpp" />
+    <ClCompile Include="..\adb\usb_libusb.cpp" />
+    <ClCompile Include="..\adb\usb_linux.cpp" />
+    <ClCompile Include="..\adb\usb_linux_client.cpp" />
+    <ClCompile Include="..\adb\usb_osx.cpp" />
+    <ClCompile Include="..\adb\usb_vendors.cpp" />
+    <ClCompile Include="..\adb\usb_windows.cpp" />
+    <ClCompile Include="..\adb\zipfile.cpp" />
+    <ClCompile Include="..\libzipfile\centraldir.cpp" />
+    <ClCompile Include="..\libzipfile\test_zipfile.cpp" />
+    <ClCompile Include="..\libzipfile\zipfile.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\adb\Android.mk" />
+    <None Include="..\adb\MODULE_LICENSE_APACHE2" />
+    <None Include="..\adb\NOTICE" />
+    <None Include="..\adb\sockets.dia" />
+    <None Include="..\libzipfile\Android.mk" />
+    <None Include="..\libzipfile\MODULE_LICENSE_APACHE2" />
+    <None Include="..\libzipfile\NOTICE" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\adb\OVERVIEW.TXT" />
+    <Text Include="..\adb\protocol.txt" />
+    <Text Include="..\adb\SERVICES.TXT" />
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\libzipfile\private.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

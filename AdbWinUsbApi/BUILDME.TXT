@@ -1,0 +1,7 @@
+为了编译AdbWinApi.dll你需要安装Windows Driver Kit，它可以从Microsoft获得。
+如果WDK已经安装，你需要设置WDK的环境变量，"cd"回到这个目录，
+执行"build -cbeEIFZ"命令清理并重新生成这个项目，或者
+你也可以执行"build -befEIF"命令生成一个最小的版本。
+
+请注意，你需要在编译 AdbWinUsbApi.dll 之前编译 AdbWinApi.dll (..\api)，
+因为它依赖于 AdbWinApi.lib 库。
